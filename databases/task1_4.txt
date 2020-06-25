@@ -1,0 +1,6 @@
+--Создайте дамп единственной таблицы help_keyword базы данных mysql. Причем добейтесь того, чтобы дамп содержал только первые 100 строк таблицы.
+
+C:\Program Files\MySQL\MySQL Server 8.0\bin>mysqldump -u root -p mysql help_keyword --where="help_keyword_id < 101" > C:\Users\ilina\PycharmProjects\training\python.git\databases\keyword_100.sql
+Enter password: **********
+
+C:\Program Files\MySQL\MySQL Server 8.0\bin>
