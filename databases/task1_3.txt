@@ -1,0 +1,75 @@
+--Создайте дамп базы данных example из предыдущего задания, разверните содержимое дампа в новую базу данных sample.
+
+--СОЗДАЕМ ДАМП
+
+C:\Program Files\MySQL\MySQL Server 8.0\bin>mysqldump example -u root -p > C:\Users\ilina\PycharmProjects\training\python.git\databases\example.sql
+Enter password: **********
+
+--СОЗДАЕМ БАЗУ ДАННЫХ SAMPLE
+
+C:\Program Files\MySQL\MySQL Server 8.0\bin>mysql -u root -p
+Enter password: **********
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 56
+Server version: 8.0.20 MySQL Community Server - GPL
+
+Copyright (c) 2000, 2020, Oracle and/or its affiliates. All rights reserved.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> create database sample;
+Query OK, 1 row affected (1.42 sec)
+
+--РАЗВОРАЧИВАЕМ ДАМП БАЗЫ ДАННЫХ EXAMPLE В БАЗУ ДАННЫХ SAMPLE
+
+mysql> \q
+Bye
+
+C:\Program Files\MySQL\MySQL Server 8.0\bin>mysql sample -u root -p < C:\Users\ilina\PycharmProjects\training\python.git\databases\example.sql
+Enter password: **********
+
+--ПРОВЕРЯЕМ РЕЗУЛЬТАТ
+
+C:\Program Files\MySQL\MySQL Server 8.0\bin>mysql -u root -p
+Enter password: **********
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 37
+Server version: 8.0.20 MySQL Community Server - GPL
+
+Copyright (c) 2000, 2020, Oracle and/or its affiliates. All rights reserved.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> show databases;
++--------------------+
+| Database           |
++--------------------+
+| example            |
+| information_schema |
+| my                 |
+| mysql              |
+| performance_schema |
+| sakila             |
+| sample             |
+| sys                |
+| world              |
++--------------------+
+9 rows in set (0.24 sec)
+
+mysql> use sample;
+Database changed
+mysql> show tables;
++------------------+
+| Tables_in_sample |
++------------------+
+| users            |
++------------------+
+1 row in set (0.10 sec)
