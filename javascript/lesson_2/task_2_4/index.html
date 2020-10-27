@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 2. Task 4</title>
+</head>
+
+<body>
+    <script>
+        "use strict";
+
+        /*
+        4. Реализовать основные 4 арифметические операции (+, -, /, *) в виде функций с двумя
+        параметрами. Т.е. например, функция для сложения должна принимать два числа, складывать их
+        и возвращать результат.
+        Обязательно использовать оператор return.
+        */
+
+        function addition(a, b) {
+            let sum = a + b;
+            alert(a + " + " + b + " = " + sum);
+            return sum;
+        }
+
+        function subtraction(a, b) {
+            let difference = a - b;
+            alert(a + " - " + b + " = " + difference);
+            return difference;
+        }
+
+        function division(a, b) {
+            let quotient = a / b;
+            alert(a + " / " + b + " = " + quotient);
+            return quotient;
+        }
+
+        function multiplication(a, b) {
+            let product = a * b;
+            alert(a + " * " + b + " = " + product);
+            return product;
+        }
+
+        addition(21, 6);
+        subtraction(21, 6);
+        division(21, 6);
+        multiplication(21, 6);
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 2. Task 5</title>
+</head>
+
+<body>
+    <script>
+        "use strict";
+
+        /*
+                5. Реализовать функцию с тремя параметрами: function mathOperation(arg1, arg2, operation),
+                где arg1, arg2 – значения аргументов, operation – строка с названием операции.В зависимости от
+                переданного значения операции(использовать switch) выполнить одну из арифметических
+                операций (использовать функции из задания 4) и вернуть полученное значение.
+        */
+
+        function mathOperation(arg1, arg2, operation) {
+
+            function addition(a, b) {
+                let sum = a + b;
+                alert(a + " + " + b + " = " + sum);
+                return sum;
+            }
+
+            function subtraction(a, b) {
+                let difference = a - b;
+                alert(a + " - " + b + " = " + difference);
+                return difference;
+            }
+
+            function division(a, b) {
+                let quotient = a / b;
+                alert(a + " / " + b + " = " + quotient);
+                return quotient;
+            }
+
+            function multiplication(a, b) {
+                let product = a * b;
+                alert(a + " * " + b + " = " + product);
+                return product;
+            }
+
+            let result = null;
+
+            switch (operation) {
+                case "+":
+                    result = addition(arg1, arg2);
+                    break;
+                case "-":
+                    result = subtraction(arg1, arg2);
+                    break;
+                case "/":
+                    result = division(arg1, arg2);
+                    break;
+                case "*":
+                    result = multiplication(arg1, arg2);
+                    break;
+                default:
+                    break;
+            }
+            return result;
+        }
+
+        mathOperation(21, 6, "+");
+        mathOperation(21, 6, "-");
+        mathOperation(21, 6, "/");
+        mathOperation(21, 6, "*");
+
+    </script>
+</body>
+
+</html>
