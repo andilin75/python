@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 3. Task 1</title>
+</head>
+
+<body>
+    <script>
+
+        "use strict";
+        /*
+        1. С помощью цикла for написать алгоритм для вывода чисел от 0 до 10 включительно, 
+        чтобы результат выглядел так:
+        0 – это ноль
+        1 – нечетное число
+        2 – четное число
+        3 – нечетное число
+        …
+        10 – четное число
+        */
+
+        for (let i = 0; i < 11; i++) {
+            if (i == 0) {
+                console.log("0 – это ноль");
+            } else {
+                let result = i % 2;
+                switch (result) {
+                    case 0:
+                        console.log(`${i} - это четное число`);
+                        break;
+                    default:
+                        console.log(`${i} - это нечетное число`);
+                        break;
+                }
+            }
+        }
+
+    </script>
+</body>
+
+</html>
